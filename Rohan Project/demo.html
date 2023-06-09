@@ -27,37 +27,29 @@
     </div>
   
   <script>
-    // function buttonClicked() {
-    //   alert("hii")
+    
     var clickCount = 0;
-    var maxImageSize = 180; // Maximum width or height in pixels
-    var targetHeight = 300;
-    function buttonClicked() {
+var maxImageSize = 180; 
+var targetHeight = 300;
+function buttonClicked() {
   clickCount++;
   var img = document.getElementById('myImage');
   var currentHeight = parseInt(img.style.height, 10);
-  var newHeight = currentHeight + 50; // Increase height by 50px on each click
-  var topOffset = parseInt(img.style.top, 10); // Get the current top offset
-  var newTopOffset = topOffset - 50; // Decrease the top offset by 50px on each click
+  var newHeight = currentHeight + 50; 
+  var topOffset = parseInt(img.style.top, 10); 
+  var newTopOffset = topOffset - 50; 
 
-  // Check if the new size exceeds the maximum size
   if (newHeight <= maxImageSize) {
-    img.style.transition = 'top 0.5s ease-out, height 0.5s ease-out'; // Add transition effect to top and height with ease-out timing function
+    img.style.transition = 'top 0.5s ease-out, height 0.5s ease-out'; 
     img.style.height = newHeight + 'px';
     img.style.top = newTopOffset + 'px';
   } else {
     if (topOffset > targetHeight) {
-      img.style.transition = 'opacity 0.5s ease-out'; // Add transition effect to opacity with ease-out timing function
-      img.style.opacity = '0'; // Set opacity to 0 to make the image disappear
+      img.style.transition = 'top 3s ease-out'; 
+      img.style.top =30 + 'px';
     }
   }
 }
-
-
-
-
-
-
   </script>
 </body>
 </html>
