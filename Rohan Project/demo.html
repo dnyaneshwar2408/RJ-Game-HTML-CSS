@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url('Symbol 3 copy.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pump">
+    <div class="handle">
+     <div style="position: relative;">
+      <div style="position: relative;">
+        <input type="image" src="Symbol 320001.png" onclick="buttonClicked()" style="position: absolute; width: 100px; height: 100px; top: 500px; left: 1200px;">
+        
+                <img src="Symbol 320003.png" style="position: absolute; width: 100px; height: 100px; top: 560px; left: 1200px;">
+                <img src="Symbol 320002.png" style="position: absolute; width: 100px; height: 100px; top: 540px; left: 1140px;">
+                <img id="myImage" src="Symbol 100001.png" style="position: absolute; width: 80px; height: 80px; top: 484px; left: 1125px;">
+
+              </div>
+      
+</div> 
+    </div>
+  
+  <script>
+    // function buttonClicked() {
+    //   alert("hii")
+    var clickCount = 0;
+    var maxImageSize = 180; // Maximum width or height in pixels
+    var targetHeight = 300;
+    function buttonClicked() {
+  clickCount++;
+  var img = document.getElementById('myImage');
+  var currentHeight = parseInt(img.style.height, 10);
+  var newHeight = currentHeight + 50; // Increase height by 50px on each click
+  var topOffset = parseInt(img.style.top, 10); // Get the current top offset
+  var newTopOffset = topOffset - 50; // Decrease the top offset by 50px on each click
+
+  // Check if the new size exceeds the maximum size
+  if (newHeight <= maxImageSize) {
+    img.style.transition = 'top 0.5s ease-out, height 0.5s ease-out'; // Add transition effect to top and height with ease-out timing function
+    img.style.height = newHeight + 'px';
+    img.style.top = newTopOffset + 'px';
+  } else {
+    if (topOffset > targetHeight) {
+      img.style.transition = 'opacity 0.5s ease-out'; // Add transition effect to opacity with ease-out timing function
+      img.style.opacity = '0'; // Set opacity to 0 to make the image disappear
+    }
+  }
+}
+
+
+
+
+
+
+  </script>
+</body>
+</html>
